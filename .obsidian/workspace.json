@@ -178,8 +178,9 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "cb203184828fa1ac",
+  "active": "a0979638552362bc",
   "lastOpenFiles": [
+    "01 - Research Foundations/PRISM-VLA Brutal Critique & Redesign.md",
     "02 - Novel Architecture/Parameter Budget Analysis.md",
     "09 - Resources/Resources & Codebases.md",
     "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
@@ -205,7 +206,6 @@
     "copilot/copilot-custom-prompts/Emojify.md",
     "copilot/copilot-custom-prompts/Explain like I am 5.md",
     "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "10 - Code & Implementation",
