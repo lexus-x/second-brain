@@ -11,10 +11,14 @@
             "id": "a0979638552362bc",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "00 - MOC/VLA Research Hub.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "VLA Research Hub"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "00 - MOC/VLA Research Hub.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for VLA Research Hub"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "00 - MOC/VLA Research Hub.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from VLA Research Hub"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "00 - MOC/VLA Research Hub.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of VLA Research Hub"
             }
           }
         ]
@@ -180,6 +187,7 @@
   },
   "active": "a0979638552362bc",
   "lastOpenFiles": [
+    "03 - Benchmarks/LIBERO Benchmark Strategy.md",
     "01 - Research Foundations/PRISM-VLA Brutal Critique & Redesign.md",
     "02 - Novel Architecture/Parameter Budget Analysis.md",
     "09 - Resources/Resources & Codebases.md",
@@ -193,7 +201,6 @@
     "05 - Experiments/Experiment Log.md",
     "04 - Literature Review/SmolVLA Paper Notes.md",
     "03 - Benchmarks/MetaWorld MT-50 Strategy.md",
-    "03 - Benchmarks/LIBERO Benchmark Strategy.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
