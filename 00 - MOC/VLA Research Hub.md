@@ -102,6 +102,87 @@ graph TD
 
 ---
 
+## Autoresearch Integration
+
+> Source: [uditgoenka/autoresearch](https://github.com/uditgoenka/autoresearch)
+> Working translation for this vault: use autonomous loops only where the success signal is mechanical, bounded, and repeatable.
+
+### Why it matters for PRISM-VLA
+
+- The repo's core pattern is: one goal, one metric, one focused change, one verification loop.
+- That fits this project well because the main targets are measurable: LIBERO success, MetaWorld success, parameter count, and inference speed.
+- The caution is equally important: do not use autoresearch for vague scientific judgment. Use it for measurable subproblems, then do human review for theory and claim framing.
+
+### Best-fit uses in this research program
+
+| Autoresearch command | Best use in this vault | Desired output |
+|---|---|---|
+| `$autoresearch plan` | Turn vague goals into bounded research loops | metric, scope, verify command |
+| `$autoresearch` | Run architecture or training ablations with one change per iteration | keep/revert experiment history |
+| `$autoresearch predict` | Generate ranked hypotheses before burning training time | prioritized failure / opportunity list |
+| `$autoresearch scenario` | Enumerate failure modes for rollout, distractors, long-horizon control, and dataset shift | edge-case matrix |
+| `$autoresearch reason` | Adversarially stress-test novelty claims and paper arguments | stronger claim set with weak points exposed |
+| `$autoresearch ship --type research` | Pre-submission paper checklist | submission readiness report |
+
+### VLA-specific metrics worth operationalizing
+
+- `LIBERO mean success %`
+- `MetaWorld MT-50 mean success %`
+- `params_millions`
+- `sim_inference_hz` or `real_robot_hz`
+- `ablation_delta_vs_baseline`
+- `PRISMA compliance %` for literature review structure
+- `claim_evidence_coverage %` for novelty audit completeness
+
+### Suggested command patterns
+
+```text
+$autoresearch plan
+Goal: Raise LIBERO mean success above SmolVLA baseline without exceeding 500M params
+```
+
+```text
+$autoresearch
+Iterations: 15
+Goal: Improve LIBERO mean success for PRISM-VLA
+Scope: 02 - Novel Architecture/**, 05 - Experiments/**, 10 - Code & Implementation/**
+Metric: LIBERO mean success % (higher is better)
+Verify: run_libero_eval_and_extract_metric
+Guard: check_params_under_500m && check_inference_hz
+```
+
+```text
+$autoresearch predict --chain debug
+Goal: Identify the most likely causes of weak long-horizon manipulation performance
+Scope: training configs, architecture notes, baseline results, failure analysis notes
+```
+
+```text
+$autoresearch scenario --depth deep --focus edge-cases
+Scenario: PRISM-VLA succeeds on short-horizon tasks but degrades under distractors, viewpoint shift, and long-horizon sequencing
+Domain: software
+```
+
+```text
+$autoresearch reason --domain research
+Task: Stress-test the claim that differential visual encoding is genuinely novel relative to SmolVLA, OpenVLA, pi0/pi0.5, and Mamba-style sequence models
+```
+
+```text
+$autoresearch ship --type research
+Target: 07 - Paper Draft/
+```
+
+### Practical rules for this vault
+
+- Keep loops narrow: one benchmark, one module, one ablation family at a time.
+- Prefer fast verify commands. If a loop takes hours, use autoresearch to plan and rank experiments first, not to brute-force everything.
+- Treat `git log` as the experiment journal: every kept and reverted ablation should teach the next move.
+- Use `$autoresearch reason` for novelty and paper argument quality, because those are partly subjective.
+- Use `$autoresearch` only after the metric extractor is trustworthy and the baseline run is reproducible.
+
+---
+
 ## 📅 Research Timeline
 
 ```mermaid
