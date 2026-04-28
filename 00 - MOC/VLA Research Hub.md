@@ -113,6 +113,36 @@ graph TD
 - That fits this project well because the main targets are measurable: LIBERO success, MetaWorld success, parameter count, and inference speed.
 - The caution is equally important: do not use autoresearch for vague scientific judgment. Use it for measurable subproblems, then do human review for theory and claim framing.
 
+### What this project actually contributes
+
+- A **setup gate**: the method refuses to loop until goal, scope, metric, and verify steps are explicit.
+- A **disciplined iteration protocol**: one change per iteration, mechanical verification, automatic rollback, and experiment logging.
+- A **family of chainable modes**, not just one loop: `plan`, `predict`, `scenario`, `reason`, `learn`, and `ship`.
+- A **noise-aware mindset**: the project explicitly treats unstable metrics as first-class and recommends repeated measurement plus minimum deltas.
+- A **research-journal model of git**: commit history is not bookkeeping; it is the memory that keeps the next experiment honest.
+
+### What transfers cleanly, and what does not
+
+| Transfers well to PRISM-VLA | Needs human control |
+|---|---|
+| Bounded ablations with one metric | Grand theory formation |
+| Benchmark-specific improvement loops | Novelty claims at publication level |
+| Failure-mode enumeration | Interpreting surprising scientific results |
+| Readiness checklists for papers | Deciding whether a result is genuinely important |
+| Hypothesis ranking before expensive runs | Choosing the long-term research agenda |
+
+The useful framing here is: `autoresearch` is best as a research operations engine, not as a substitute for scientific taste.
+
+### What this means for the project architecture
+
+- `PRISM-VLA` should expose **machine-readable metrics** before we trust any loop.
+- The benchmark pipeline needs a **fast proxy verify path** for early iterations and a **full verify path** for serious decisions.
+- The vault should separate **objective loops** from **subjective review**:
+  objective = benchmark score, params, throughput, compliance
+  subjective = novelty, framing, claim strength, paper story
+- Expensive full training runs should be preceded by cheaper upstream stages:
+  `reason` for claims, `predict` for likely failure causes, `scenario` for blind spots, then bounded `autoresearch` loops.
+
 ### Best-fit uses in this research program
 
 | Autoresearch command | Best use in this vault | Desired output |
@@ -133,6 +163,14 @@ graph TD
 - `ablation_delta_vs_baseline`
 - `PRISMA compliance %` for literature review structure
 - `claim_evidence_coverage %` for novelty audit completeness
+
+### Project gaps before this becomes real
+
+- A `Verify:` layer that outputs one parsable number for each benchmark target.
+- A stable **mini-benchmark** or proxy evaluation for cheap iteration before full LIBERO / MetaWorld sweeps.
+- A reproducible **results ledger** that stores config, seed, metric, date, and kept/reverted status.
+- A claim-audit template that links each novelty sentence to evidence, comparisons, and prior-art notes.
+- A guardrail for parameter budget and inference speed so score gains do not quietly destroy deployability.
 
 ### Suggested command patterns
 
@@ -173,6 +211,15 @@ $autoresearch ship --type research
 Target: 07 - Paper Draft/
 ```
 
+### Recommended project workflow
+
+1. Use `$autoresearch reason --domain research` on every major novelty claim before it enters the paper draft.
+2. Use `$autoresearch predict` before expensive training blocks to rank likely causes of weak results or hidden bottlenecks.
+3. Use `$autoresearch scenario` on benchmark and deployment settings to surface distractor, temporal, recovery, and distribution-shift failures.
+4. Use `$autoresearch plan` to turn each ablation family into a metric-driven loop with an explicit verify command.
+5. Use bounded `$autoresearch` runs only after the baseline is reproducible and the metric extractor is trusted.
+6. Use `$autoresearch ship --type research` before submission to force a checklist over citations, methodology, figures, and claim support.
+
 ### Practical rules for this vault
 
 - Keep loops narrow: one benchmark, one module, one ablation family at a time.
@@ -180,6 +227,7 @@ Target: 07 - Paper Draft/
 - Treat `git log` as the experiment journal: every kept and reverted ablation should teach the next move.
 - Use `$autoresearch reason` for novelty and paper argument quality, because those are partly subjective.
 - Use `$autoresearch` only after the metric extractor is trustworthy and the baseline run is reproducible.
+- For robotics, assume raw training metrics are noisy unless proven otherwise; design for repeated measurements and minimum meaningful deltas.
 
 ---
 
