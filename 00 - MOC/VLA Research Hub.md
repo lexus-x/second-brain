@@ -102,6 +102,77 @@ graph TD
 
 ---
 
+## Council Review
+
+> Multi-note synthesis of the vault's current research debate: PRISM vs. STRATOS vs. PROGRESS vs. GAUSS.
+
+### What changed in the second brain
+
+- The vault no longer contains just one confident architecture story.
+- It now records a sequence of self-corrections:
+  `PRISM-VLA` → `Brutal Critique` → `STRATOS/PROGRESS debate` → `GAUSS-VLA thesis`
+- That is a good sign. The research direction is becoming more falsifiable and less attached to the first idea.
+
+### Council of experts: verdict by approach
+
+| Voice | Best current judgment |
+|---|---|
+| **Novelty reviewer** | `PRISM-VLA` is not the strongest claim anymore; too much of DVE is scooped, and only part of EAS remains clearly novel. |
+| **Benchmark skeptic** | Standard `LIBERO` is not a headline metric; `LIBERO-PRO`, `LIBERO-Long`, and rotation-heavy `MT-50` subsets are more defensible. |
+| **Theory person** | `GAUSS-VLA` has the deepest technical thesis because it attacks the geometry problem directly on `SE(3)` instead of layering heuristics on top of Euclidean action space. |
+| **Ablation pragmatist** | `PROGRESS-VLA` is the cleanest intermediate experiment because it tests whether discrete phases are even needed before paying STRATOS complexity. |
+| **Systems engineer** | `autoresearch` is best used as the research-operations layer around these experiments, not as the source of the scientific idea. |
+
+### Who has the best approach
+
+**Best overall research thesis:** `GAUSS-VLA`
+
+Why:
+- It absorbs the strongest surviving intuition from earlier notes: action space has structure.
+- It replaces a weak abstraction with a stronger one: not eigenspaces or phases first, but geometry on `SE(3)` plus calibrated uncertainty.
+- It creates clearer publication-level claims than PRISM or STRATOS:
+  geometry-aware action generation, uncertainty calibration, and adaptive replanning horizon.
+- It aligns better with the hardest tasks in the vault: long-horizon control, rotation-heavy manipulation, and deployment credibility.
+
+**Best next experimental decision rule:** `PROGRESS-first, STRATOS only if needed`
+
+Why:
+- The debate note argues that `PROGRESS-VLA` is the simplest architecture that still tests the core phase assumption.
+- If a simpler progress-conditioned model works, STRATOS complexity is unnecessary.
+- If even the null architecture works, both PROGRESS and STRATOS are over-engineered and the paper should pivot toward geometry / deployment instead.
+
+### Ranked recommendation
+
+1. `GAUSS-VLA` as the thesis and paper direction.
+2. `PROGRESS-VLA` as the best control experiment if the phase question still matters.
+3. `STRATOS-VLA` only if phase consistency is empirically validated and simpler alternatives leave performance on the table.
+4. `PRISM-VLA` as historical scaffolding, not the final claim.
+
+### Why PRISM is no longer the winner
+
+- `DVE` was challenged as scooped by later literature and critique notes.
+- `PACE` depends on a phase story that the debate note says is still unproven.
+- `EAS` preserved the intuition that action structure matters, but the vault later argues the correct structure is geometric, not PCA-style linear decomposition.
+- The original headline package also carries benchmark and parameter-counting problems that weaken the paper narrative.
+
+### What the council would do next
+
+1. Update the public-facing story of the vault so `PRISM-VLA` is no longer treated as the uncontested active thesis.
+2. Keep `autoresearch` attached to `GAUSS-VLA` and the benchmark program as a loop engine for:
+   hypothesis ranking, scenario generation, metric plumbing, ablation bookkeeping, and paper-readiness checks.
+3. Run the highest-leverage reality checks before any more architecture mythology:
+   SmolVLA MT-50 baseline, fair parameter accounting, and a null / simpler control on long-horizon tasks.
+
+### Bottom line
+
+The best approach in the current second brain is **not** the original PRISM stack. The strongest research posture is:
+
+`GAUSS-VLA` for the thesis  
+`PROGRESS-VLA` for the clean control experiment  
+`autoresearch` for disciplined research operations
+
+---
+
 ## Autoresearch Integration
 
 > Source: [uditgoenka/autoresearch](https://github.com/uditgoenka/autoresearch)
